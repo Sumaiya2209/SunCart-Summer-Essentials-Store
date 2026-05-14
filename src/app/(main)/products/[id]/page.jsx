@@ -1,10 +1,13 @@
-import React from 'react';
-import ProductDetails from '@/components/products/ProductDetails';
+import ProductDetails from "@/components/products/ProductDetails";
 
-const ProductDetailsPage = ({ params}) => {
+const ProductDetailsPage = async ({ params }) => {
+  const { id } = await params;
+
+  console.log(id);
+
   return (
     <div>
-      <ProductDetails product={params.id} />
+      <ProductDetails id={id} />
     </div>
   );
 };

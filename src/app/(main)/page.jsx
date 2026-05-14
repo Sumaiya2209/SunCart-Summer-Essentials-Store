@@ -2,7 +2,8 @@ import React from 'react';
 import banner from "@/assets/summer-sale-banner.jpg";
 import Image from 'next/image';
 import PopularProducts from './popularproducts/page';
-import Tips from '@/components/home/Tips.jsx';
+import SummerTips from '@/components/home/Tips';
+import TopBrands from '@/components/home/Brands';
 
 
 const HomePage = () => {
@@ -10,7 +11,8 @@ const HomePage = () => {
     <div>
       <Image src={banner} alt="Summer Sale Banner" className="w-full h-auto" loading="eager"/>
       <PopularProducts />
-      <Tips />
+      <SummerTips />
+      <TopBrands />
     </div>
   );
 };
