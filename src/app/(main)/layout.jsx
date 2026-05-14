@@ -5,9 +5,9 @@ import React from "react";
 const MainLayout = ({ children }) => {
   return (
     <>
-     <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <Navbar />
+      <main className="flex-1">{children}</main>
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,70 @@
+{
+  "products": [
+  {
+    "id": 1,
+    "name": "Polarized UV Sunglasses",
+    "brand": "SunShade",
+    "price": 22,
+    "rating": 4.8,
+    "stock": 15,
+    "description": "Trendy polarized sunglasses with full UV protection for sunny days.",
+    "image": "https://images.unsplash.com/photo-1612902457652-33aff0a641fa?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Sunglasses"
+  },
+  {
+    "id": 2,
+    "name": "Floral Summer Dress",
+    "brand": "BloomWear",
+    "price": 35,
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Lightweight floral summer dress perfect for beach walks and vacations.",
+    "image": "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?q=80&w=696&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Summer Outfits"
+  },
+  {
+    "id": 3,
+    "name": "SPF 50 Sunscreen Lotion",
+    "brand": "SkinGuard",
+    "price": 18,
+    "rating": 4.9,
+    "stock": 40,
+    "description": "Water-resistant sunscreen lotion with SPF 50 for maximum protection.",
+    "image": "https://images.unsplash.com/photo-1721913395444-0cd6856a864c?q=80&w=536&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Skincare"
+  },
+  {
+    "id": 4,
+    "name": "Beach Straw Hat",
+    "brand": "SunnyStyle",
+    "price": 16,
+    "rating": 4.6,
+    "stock": 25,
+    "description": "Wide-brim straw hat designed for stylish sun protection.",
+    "image": "https://plus.unsplash.com/premium_photo-1675993000728-cdc7727e779f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Beach Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Cotton Tank Top",
+    "brand": "AirFit",
+    "price": 14,
+    "rating": 4.5,
+    "stock": 30,
+    "description": "Breathable cotton tank top for hot summer weather.",
+    "image": "https://images.unsplash.com/photo-1618227637592-99ab98da1d66?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Summer Outfits"
+  },
+  {
+    "id": 6,
+    "name": "Hydrating Face Mist",
+    "brand": "FreshGlow",
+    "price": 12,
+    "rating": 4.4,
+    "stock": 35,
+    "description": "Cooling face mist that refreshes and hydrates skin instantly.",
+    "image": "https://images.unsplash.com/photo-1636399479839-1f573340edda?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Skincare"
+  }
+  ]
+}

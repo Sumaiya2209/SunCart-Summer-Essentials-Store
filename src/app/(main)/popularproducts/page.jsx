@@ -13,13 +13,14 @@ const productsFetch = async () => {
 const PopularProducts = async () => {
 
   const products = await productsFetch();
+  const limitedProducts = products.slice(0, 3);
 
   return (
     <div className="container mx-auto m-25">
       <h2 className="text-6xl font-bold mb-20 text-center text-orange-500">Popular Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center w-10/12 mx-auto">
         {
-          products.map((product) => (
+          limitedProducts.map((product) => (
             <div key={product.id} className="card bg-base-100 w-full shadow-sm ">
               <figure>
                 <Image
@@ -53,7 +54,11 @@ const PopularProducts = async () => {
           ))
         }
       </div>
-      
+      <div className="flex items-center justify-center my-10">
+        <Link href={`/products`} className="btn text-lg text-white bg-orange-500 hover:bg-white hover:text-orange-500 w-2/10 p-6">
+          View All Products
+        </Link>
+      </div>
     </div>
   );
 };
