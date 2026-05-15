@@ -20,7 +20,13 @@ const RegisterPage = () => {
       password: userData.password, 
       callbackURL: "/",
     });
-    console.log("Registration response:", { data, error });
+
+    if(error) {
+      alert("Registration failed: " + error.message);
+    }
+    if (data) {
+      alert("Registration successful! Please check your email to verify your account.");
+    }
   };
 
   return (
@@ -56,7 +62,7 @@ const RegisterPage = () => {
                 <Label className="font-medium text-gray-700">Name</Label>
                 <Input
                   placeholder="Enter your name"
-                  className="mt-1" />
+                  className="mt-1 w-full" />
                 <FieldError />
               </TextField>
 
@@ -75,7 +81,7 @@ const RegisterPage = () => {
                 <Label className="font-medium text-gray-700">Email</Label>
                 <Input
                   placeholder="Enter your email"
-                  className="mt-1" />
+                  className="mt-1 w-full" />
                 <FieldError />
               </TextField>
               <TextField
@@ -98,7 +104,7 @@ const RegisterPage = () => {
                 <Label className="font-medium text-gray-700">Password</Label>
                 <Input
                   placeholder="Enter your password"
-                  className="mt-1" />
+                  className="mt-1 w-full" />
                 <FieldError />
               </TextField>
               <Button type="submit"

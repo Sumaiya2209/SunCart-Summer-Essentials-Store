@@ -1,11 +1,22 @@
-import React from 'react';
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-const WishList = () => {
+const Wishlist = async () => {
+
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    redirect("/login");
+  }
+
   return (
-    <div>
-      WishList
+    <div className="text-5xl font-bold text-center m-20">
+      <h1>My Wishlist</h1>
     </div>
   );
 };
 
-export default WishList;WishList
+export default Wishlist;

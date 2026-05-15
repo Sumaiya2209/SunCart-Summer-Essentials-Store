@@ -1,19 +1,34 @@
 'use client';
-import { Button, FieldError, Form, Input,  Label,  TextField } from "@heroui/react";
+import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import { authClient } from "@/lib/auth-client";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const LoginPage = () => {
 
-  const onSubmit = (e) => {
+  const [isPasswordShown, setIsPasswordShown] = useState(true);
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
+    const userData = Object.fromEntries(formData.entries());
+
+    const { data, error } = await authClient.signIn.email({
+      email: userData.email,
+      password: userData.password,
+      rememberMe: true,
+      callbackURL: "/",
     });
-    alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+
+    if (error) {
+      alert("Login failed: " + error.message);
+    }
+    if (data) {
+      alert("Login successful! Welcome back.");
+    }
   };
 
   return (
@@ -38,9 +53,10 @@ const LoginPage = () => {
 
           <div className="px-8 py-8">
             <Form
-              className="flex flex-col gap-5"
+              className="flex flex-col w-full gap-5 "
               onSubmit={onSubmit} >
               <TextField
+                className="w-full"
                 isRequired
                 name="email"
                 type="email"
@@ -55,21 +71,27 @@ const LoginPage = () => {
                 <Label className="font-medium text-gray-700">Email</Label>
                 <Input
                   placeholder="Enter your email"
-                  className="mt-1"/>
+                  className="mt-1 w-full" />
                 <FieldError />
               </TextField>
               <TextField
+                className="w-full relative"
                 isRequired
                 minLength={8}
                 name="password"
                 type="password"
                 validate={(value) => {
-                 
+
                 }} >
                 <Label className="font-medium text-gray-700">Password</Label>
                 <Input
+                  type={isPasswordShown ? "text" : "password"}
                   placeholder="Enter your password"
-                  className="mt-1"/>
+                  className="mt-1 w-full" />
+
+                <span className="absolute right-4 top-11 cursor-pointer" onClick={() => setIsPasswordShown(!isPasswordShown)}>
+                  {isPasswordShown ? <FaEye /> : <FaEyeSlash />}
+                </span>
                 <FieldError />
               </TextField>
               <Button type="submit"

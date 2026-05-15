@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
 
 const productsFetch = async () => {
@@ -9,6 +12,13 @@ const productsFetch = async () => {
 };
 
 const productCart = async ({ id }) => {
+
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  if (!session) {
+    redirect("/login");
+  }
 
   const products = await productsFetch();
   const product = products.find((p) => p.id === id);

@@ -1,9 +1,15 @@
+'use client'
+
 import Link from "next/link"
 import Logo from "@/assets/logo.png"
 import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
+
+  const { data: session, isPending } = authClient.useSession();
+  const user = session ? session.user : null;
 
   const menuItems = (
     <>
@@ -42,7 +48,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/">
-            <Image src={Logo} alt="logo" className="w-50 h-20" loading="eager"/>
+            <Image src={Logo} alt="logo" className="w-50 h-20" loading="eager" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -50,11 +56,26 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <div className="navbar-end">
-          <CgProfile size={24} />
-          <Link href="/login" className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2">
-            Login 
-          </Link> 
+
+        <div className="navbar-end gap-2">
+          {isPending ? (
+            <span className="loading loading-spinner loading-lg"></span>
+          ) : user ? (
+            <>
+              <h1>Welcome, {user.name}!</h1>
+              <CgProfile size={24} />
+              <Link className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2" onClick={async () => await authClient.signOut()}>
+                Logout
+              </Link>
+            </>
+          ) : (
+            <>
+              <CgProfile size={24} />
+              <Link href="/login" className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2">
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
