@@ -3,15 +3,19 @@ import React from 'react';
 
 const NavbarForLogin = () => {
   return (
-    <div className='flex flex-2 items-center justify-center shadow-sm gap-4 p-4'>
-      <Link href="/login" className='text-gray-700 hover:text-orange-500 font-medium'>
-        Login
-      </Link>
-      <div className='border-l-2 h-6'></div>
-      <Link href="/register" className='text-gray-700 hover:text-orange-500 font-medium'>
-        Register
-      </Link>
-    </div>
+    <div className="w-full flex items-center justify-center border-b border-gray-200 bg-white">
+  
+  <div className="flex items-center gap-14">
+    <Link
+      href="/login"
+      className="relative py-4 text-sm md:text-base font-semibold text-orange-500 transition-all duration-300">Login
+      <span className="absolute left-0 bottom-0 h-[2px] w-full rounded-full bg-orange-500"> </span>
+    </Link>
+    <Link
+      href="/register"
+      className="py-4 text-sm md:text-base font-semibold text-gray-600 hover:text-orange-500 transition-all duration-300">Registration</Link>
+  </div>
+</div>
   );
 };
 
