@@ -9,12 +9,19 @@ const client = new MongoClient(process.env.AUTH_MONGO_URI);
 const db = client.db("SunCart");
 
 export const auth = betterAuth({
+
   emailAndPassword: { 
     enabled: true, 
   },
   database: mongodbAdapter(db, {
     client
   }),
+  socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+        }, 
+    },
 });
 
 

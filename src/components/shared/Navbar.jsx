@@ -6,7 +6,10 @@ import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
 import { authClient } from "@/lib/auth-client";
 
+import { useRouter } from "next/navigation";
+
 const Navbar = () => {
+  const router = useRouter();
 
   const { data: session, isPending } = authClient.useSession();
   const user = session ? session.user : null;
@@ -27,6 +30,9 @@ const Navbar = () => {
       </Link>
       <Link href="/contact" className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-4 py-2">
         Contact
+      </Link>
+      <Link href="/profile" className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-4 py-2">
+        Profile
       </Link>
     </>
   );
@@ -64,9 +70,9 @@ const Navbar = () => {
             <>
               <h1>Welcome, {user.name}!</h1>
               <CgProfile size={24} />
-              <Link className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2" onClick={async () => await authClient.signOut()}>
+              <button className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2" onClick={async () => {await authClient.signOut(); router.push("/");}}>
                 Logout
-              </Link>
+              </button>
             </>
           ) : (
             <>

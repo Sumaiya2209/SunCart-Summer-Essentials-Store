@@ -1,12 +1,19 @@
 import Navbar from '@/components/shared/Navbar';
 import NavbarForLogin from '@/components/shared/NavbarForLogin';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 
-const AuthLayout = ({ children }) => {
+const AuthLayout = async ({ children }) => {
+
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
   return (
     <div>
       <Navbar />
-      <NavbarForLogin />
+      { !session && <NavbarForLogin /> }
       {children}
     </div>
   );

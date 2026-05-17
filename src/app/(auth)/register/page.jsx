@@ -6,8 +6,12 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const RegisterPage = () => {
+
+   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -18,6 +22,7 @@ const RegisterPage = () => {
       name: userData.name,
       email: userData.email, 
       password: userData.password, 
+      image: userData.image,
       callbackURL: "/",
     });
 
@@ -84,11 +89,23 @@ const RegisterPage = () => {
                   className="mt-1 w-full" />
                 <FieldError />
               </TextField>
+
+              <TextField
+                name="image"  
+                type="url"
+                >
+                <Label className="font-medium text-gray-700">Profile Image  </Label>
+                <Input        
+                  placeholder="Enter image"
+                  className="mt-1 w-full" />
+                <FieldError />
+              </TextField>
+               
               <TextField
                 isRequired
                 minLength={8}
                 name="password"
-                type="password"
+                type={isPasswordShown ? "text" : "password"}
                 validate={(value) => {
                   if (value.length < 8) {
                     return "Password must be at least 8 characters";
@@ -105,8 +122,12 @@ const RegisterPage = () => {
                 <Input
                   placeholder="Enter your password"
                   className="mt-1 w-full" />
+                  <span className="relative left-85 bottom-8 cursor-pointer" onClick={() => setIsPasswordShown(!isPasswordShown)}>
+                  {isPasswordShown ? <FaEye /> : <FaEyeSlash />}
+                </span>
                 <FieldError />
               </TextField>
+              
               <Button type="submit"
                 className="w-full h-12 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-all duration-300 mt-2">Register Now
               </Button>
