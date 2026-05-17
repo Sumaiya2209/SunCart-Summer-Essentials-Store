@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ☀️ SunCart – Summer Products E-Commerce Website
 
-## Getting Started
+SunCart is a modern summer-themed e-commerce web application built with Next.js, Tailwind CSS, DaisyUI/HeroUI, and BetterAuth.  
+Users can browse summer products, view product details, authenticate securely, and manage their profile information.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 Live URL:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🎯 Project Purpose
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The main goal of this project is to create a responsive and user-friendly summer products e-commerce platform using modern web technologies.
 
-## Learn More
+This project demonstrates:
 
-To learn more about Next.js, take a look at the following resources:
+- Authentication system using BetterAuth
+- Protected routes
+- Dynamic product rendering
+- User profile management
+- Responsive UI design
+- Modern Next.js App Router architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🚀 Features
 
-## Deploy on Vercel
+## 🔝 Navbar
+- Website Logo
+- Navigation Links:
+  - Home
+  - Products
+  - My Profile
+- Authentication-based UI:
+  - Logged in → Avatar + Logout button
+  - Logged out → Login/Register buttons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔻 Footer
+- Contact Information
+- Social Media Links
+- Privacy Policy
+
+---
+
+## 🏠 Home Page
+
+### 🌅 Hero Section
+- Summer Sale Banner
+- Promotional Offers
+  - Summer Sale 50% OFF
+  - Hot Deals 🔥
+
+### 🔥 Popular Products
+- Displays 3 featured products
+- Product Card Includes:
+  - Product Image
+  - Product Name
+  - Rating
+  - Price
+  - View Details Button
+
+### ➕ Extra Sections
+- Summer Care Tips
+- Top Brands Showcase
+
+---
+
+## 📦 Products
+- Static JSON-based product data
+- Minimum 6 summer-related products
+
+---
+
+## 🔒 Protected Product Details Page
+- Accessible only for authenticated users
+- Redirects unauthenticated users to Login page
+- Redirects back after successful login
+
+---
+
+## 🔐 Authentication System (BetterAuth)
+
+### Login Features
+- Email & Password Login
+- Google Authentication
+- Error Handling with Toast Messages
+- Redirect to Home after successful login
+
+### Register Features
+- Name
+- Email
+- Photo URL
+- Password
+- Google Authentication
+- Redirect to Login page after successful registration
+
+---
+
+## 👤 My Profile
+- Displays:
+  - User Name
+  - User Email
+  - User Photo
+
+---
+
+## ✏️ Update Profile Feature
+- Update:
+  - User Name
+  - User Image
+- Uses BetterAuth Update User API
+
+Documentation:
+https://better-auth.com/docs/concepts/users-accounts#update-user
+
+---
+
+# 🛠️ Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- DaisyUI / HeroUI
+- BetterAuth
+- MongoDB
+- React Icons
+
+---
+
+# 📦 NPM Packages Used
+
+Lottie
