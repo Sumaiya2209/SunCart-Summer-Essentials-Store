@@ -70,7 +70,7 @@ const MyProfilePage = async () => {
               </div>
             </div>
             <div className="mt-10 flex justify-end">
-              <Link href="/update-profile">
+              <Link href="/update_profile">
                 <button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-md hover:scale-105">
                   <FiEdit2 size={18} />
                   Update Profile

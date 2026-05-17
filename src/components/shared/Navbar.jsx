@@ -67,20 +67,20 @@ const Navbar = () => {
           {isPending ? (
             <span className="loading loading-spinner loading-lg"></span>
           ) : user ? (
-            <>
-              <h1>Welcome, {user.name}!</h1>
+            <div className="flex items-center gap-2 sm:gap-3">
+               <h1 className="hidden sm:block text-sm md:text-base font-medium">Welcome, {user.name}!</h1>
               <CgProfile size={24} />
               <button className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2" onClick={async () => {await authClient.signOut(); router.push("/");}}>
                 Logout
               </button>
-            </>
+            </div>
           ) : (
-            <>
+            <div className="flex items-center gap-2">
               <CgProfile size={24} />
               <Link href="/login" className="font-medium text-orange-500 hover:bg-orange-500 hover:text-white rounded-lg px-3 py-2">
                 Login
               </Link>
-            </>
+            </div>
           )}
         </div>
       </div>
