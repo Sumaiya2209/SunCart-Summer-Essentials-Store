@@ -32,8 +32,11 @@ This project demonstrates:
   - Home
   - Products
   - My Profile
+  - BLogs
+  - Wishlist 
+  - Contact
 - Authentication-based UI:
-  - Logged in → Avatar + Logout button
+  - Logged in → Avatar + Logout button (Login with Google)
   - Logged out → Login/Register buttons
 
 ---
