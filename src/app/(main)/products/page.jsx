@@ -4,7 +4,7 @@ import Link from "next/link";
 import { StarFill } from '@gravity-ui/icons';
 
 const productsFetch = async () => {
-  const res = await fetch("http://localhost:5000/products");
+  const res = await fetch("https://server-suncart.onrender.com/products");
   const data = await res.json();
   return data;
 };
