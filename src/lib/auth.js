@@ -10,10 +10,6 @@ const db = client.db("SunCart");
 
 export const auth = betterAuth({
 
-  trustedOrigins: [
-    "http://localhost:3000",
-    "https://sun-cart-project.vercel.app",
-  ],
   emailAndPassword: { 
     enabled: true, 
   },
