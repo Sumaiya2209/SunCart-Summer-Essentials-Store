@@ -7,7 +7,7 @@ Users can browse summer products, view product details, authenticate securely, a
 
 ## 🌐 Live Website
 
-🔗 Live URL:
+🔗 Live URL: https://sun-cart-project.vercel.app/
 
 ## 🎯 Project Purpose
 
